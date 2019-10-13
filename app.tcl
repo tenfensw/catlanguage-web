@@ -1,3 +1,7 @@
+#!/usr/bin/env tclsh
+# Cat Language Translator (web UI)
+# Copyright (C) Tim K/RoverAMD 2018-2019 <timprogrammer@rambler.ru>
+
 source toolatra_http.tcl
 source toolatra_templates.tcl
 source catlanguage/translate.tcl

@@ -1,0 +1,23 @@
+= Cat Language Translator (web UI)
+
+This is a small web service written in Tcl and Toolatra that translates English text to Cat Language and vice versa. It uses the ``catlanguage`` library that I've posted earlier on my second GitHub account: http://github.com/RoverAMD/catlanguage-web
+
+The main website is https://catlanguage.herokuapp.com
+
+== Running locally
+
+You'll need cURL and ActiveTcl 8.6 to run locally.
+
+[source,bash]
+----
+$ curl -o toolatra_http.tcl https://raw.githubusercontent.com/timkoi/toolatra/master/toolatra_http.tcl
+$ curl -o toolatra_templates.tcl https://raw.githubusercontent.com/timkoi/toolatra/master/toolatra_templates.tcl
+$ curl -o public/bootstrap.min.css https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css
+$ tclsh app.tcl
+----
+
+This will serve the app at ``http://localhost:5050``.
+
+== License
+
+As always, MIT License.
