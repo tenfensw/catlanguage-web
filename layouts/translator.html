@@ -1,0 +1,24 @@
+<script src=/business-logic.js></script>
+<h2>Talk to cats like a pro!</h2>
+<div class="alert alert-warning" role="alert">
+<b>DISCLAIMER!</b> If it wasn't obvious, Cat Language does not exist in real life and this web app was made to amuse the developer and other people who would like to use this service. Also, there is no warranty for it.
+</div>
+<div role="alert" class="alert alert-danger" id=errorMessage style="visibility: hidden;">
+Unfortunately, your request cannot be processed now. Please try again later.
+</div>
+<div id=selectionForm style="width: 100%">
+<center>
+	<select onchange="retranslateAgain()" id=lang><option selected>English-Meow</option><option>Meow-English</option></select>
+</center>
+</div>
+<br>
+<table style="width: 100%; height; 285px;">
+<tr>
+  <td>
+     <textarea onPaste="sendTranslation(this.value)" onKeyPress="sendTranslation(this.value)" placeholder="Start typing your text here..." id=input cols=50 rows=20></textarea>
+  </td>
+  <td>
+     <textarea id=output readonly cols=50 rows=20></textarea>
+  </td>
+</tr>
+</table>

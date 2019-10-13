@@ -1,0 +1,3 @@
+[submodule "lib/catlanguage"]
+	path = catlanguage
+	url = https://github.com/RoverAMD/catlanguage
