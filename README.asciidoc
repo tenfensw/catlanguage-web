@@ -12,7 +12,6 @@ You'll need cURL and ActiveTcl 8.6 to run locally.
 ----
 $ curl -o toolatra_http.tcl https://raw.githubusercontent.com/timkoi/toolatra/master/toolatra_http.tcl
 $ curl -o toolatra_templates.tcl https://raw.githubusercontent.com/timkoi/toolatra/master/toolatra_templates.tcl
-$ curl -o public/bootstrap.min.css https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css
 $ tclsh app.tcl
 ----
 

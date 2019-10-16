@@ -1,10 +1,10 @@
 <h1>API reference</h1>
 <p>This service does have its own web API. I'm not sure why you would you use it in your app, but, maybe for entertainment purposes, it will be cool to use it.</p>
 
-<h2>Available functions</h2>
+<h2>Available functions (all of them accept only POST requests)</h2>
 <ul>
-<li><b><i>/do-meow?c=[base64 of the text that you want to translate]</i></b> - translates the text into Cat Language. Returns a single string with the translation of the text in plain text format.</li>
-<li><b><i>/do-english?c=[base64 of the Cat Language text]</i></b> - translate back to English. Returns a single string containing the original English text.</li>
+<li><b><i>/do-meow</i></b> - translates the text into Cat Language. Returns a single string with the translation of the text in plain text format.</li>
+<li><b><i>/do-english</i></b> - translate back to English. Returns a single string containing the original English text.</li>
 </ul>
 
 <h2>Examples (in Tcl)</h2>
@@ -14,8 +14,8 @@ package require tls
 package require base64
 
 http::register https 443 tls::socket ;# use TLS
-set url "https://catlanguage.herokuapp.com/do-cat?c=[base64::encode {Hey}]"
-set token [http::geturl $url]
+set url "https://catlanguage.herokuapp.com/do-cat"
+set token [http::geturl $url -query {Hey}]
 set status [http::status $token]
 set answer [http::data $token]
 http::cleanup $token

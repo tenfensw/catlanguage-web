@@ -9,16 +9,13 @@ function retranslateAgain() {
 function sendTranslation(txt) {
 	let errM = document.getElementById('errorMessage');
 	errM.style.visibilty = 'visible';
-	let strSent = btoa(txt).replace('/', '__SL__').replace('=', '__EQ__').replace('+', '__MN__');
+	//let strSent = btoa(txt).replace('/', '__SL__').replace('=', '__EQ__').replace('+', '__MN__');
+	let strSent = txt;
 	let strFunc = 'do-meow';
 	if (document.getElementById('lang').value.startsWith("Meow-"))
 		strFunc = 'do-english';
-	window.fetch('/' + strFunc + '?c=' + strSent).then(
-		function(response) {
-			if (response.status == 200) {
-				errM.style.visibilty = 'hidden';
-				response.text().then(function(vl) { document.getElementById('output').value = vl; });
-			}
-		}
-	);
+	$.post("/" + strFunc, strSent, function(resp) {
+			errM.style.visibilty = 'hidden';
+			document.getElementById('output').value = resp; });
+
 }

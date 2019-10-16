@@ -8,11 +8,6 @@ source catlanguage/translate.tcl
 
 set content {}
 
-proc atob {vl} {
-	set result [binary decode base64 [string map {__EQ__ {=} __SL__ {/} __MN__ {+}} $vl]]
-	return $result
-}
-
 proc layout {getL} {
 	set directory "[file dirname [info script]]/layouts"
 	if {! [file isdirectory $directory]} {
@@ -30,18 +25,22 @@ get / {
 	etcl index.html
 }
 
+post /do-meow {
+	render [meowify $rawData] text/plain
+}
+
 get /do-meow {
-	if {! [dict exists $params c]} {
-		error 500
-	}
-	render [meowify [atob [dict get $params c]]] text/plain
+	status 400
+	render "Legacy GET-request based API is no longer available. Please use the new POST-request based API."
+}
+
+post /do-english {
+	render [unmeow $rawData] text/plain
 }
 
 get /do-english {
-	if {! [dict exists $params c]} {
-		error 500
-	}
-	render [unmeow [atob [dict get $params c]]] text/plain
+	status 400
+	render "Legacy GET-request based API is no longer available. Please use the new POST-request based API."
 }
 
 get /api {
