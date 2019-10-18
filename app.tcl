@@ -2,8 +2,8 @@
 # Cat Language Translator (web UI)
 # Copyright (C) Tim K/RoverAMD 2018-2019 <timprogrammer@rambler.ru>
 
-source toolatra_http.tcl
-source toolatra_templates.tcl
+package require Toolatra 19.10
+package require ToolatraTemplates
 source catlanguage/translate.tcl
 
 set content {}
