@@ -14,7 +14,7 @@ function sendTranslation(txt) {
 	let strFunc = 'do-meow';
 	if (document.getElementById('lang').value.startsWith("Meow-"))
 		strFunc = 'do-english';
-	$.post("/" + strFunc, strSent, function(resp) {
+	$.post(strFunc, strSent, function(resp) {
 			errM.style.visibilty = 'hidden';
 			document.getElementById('output').value = resp; });
 

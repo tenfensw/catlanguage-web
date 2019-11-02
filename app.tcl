@@ -3,7 +3,7 @@
 # Copyright (C) Tim K/RoverAMD 2018-2019 <timprogrammer@rambler.ru>
 
 package require Toolatra 19.10
-package require ToolatraTemplates
+package require ToolatraTemplates 19.10
 source catlanguage/translate.tcl
 
 set content {}
@@ -20,9 +20,7 @@ proc layout {getL} {
 }
 
 get / {
-	global content
-	set content [layout translator]
-	etcl index.html
+	redirect home
 }
 
 post /do-meow {
@@ -43,10 +41,16 @@ get /do-english {
 	render "Legacy GET-request based API is no longer available. Please use the new POST-request based API."
 }
 
+get /home {
+	global content
+	set content [layout translator]
+	etcl index.html
+}
+
 get /api {
 	global content
 	set content [layout api-info]
 	etcl index.html
 }
 
-run
+run 5053

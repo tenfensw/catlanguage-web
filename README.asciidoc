@@ -2,7 +2,7 @@
 
 This is a small web service written in Tcl and Toolatra that translates English text to Cat Language and vice versa. It uses the ``catlanguage`` library that I've posted earlier on my second GitHub account: http://github.com/RoverAMD/catlanguage-web
 
-The main website is https://catlanguage.herokuapp.com
+The main website is http://meow.roveramd.com/catlanguage/home
 
 == Running locally
 
@@ -15,7 +15,7 @@ $ curl -o toolatra_templates.tcl https://raw.githubusercontent.com/timkoi/toolat
 $ tclsh app.tcl
 ----
 
-This will serve the app at ``http://localhost:5050``.
+This will serve the app at ``http://localhost:5053``.
 
 == License
 
